@@ -3,7 +3,7 @@ using ChatProgramm;
 
 namespace ChatProgramm
 {
-	public record Like(Messages Message, User User)
+	public record Like(User User)
 	{
         public static void LikeItBy(Messages Message, User User)
         {
@@ -23,11 +23,10 @@ namespace ChatProgramm
                 var (origMessage, likeAuthor) = like;
                 if (likeAuthor == user)
                 {
-                    Console.WriteLine($"{origMessage.ShowMessage}");
+                    Console.WriteLine($"{origMessage.ShowMessage()}");
                 }
             }
         }
-
     }
 }
 
